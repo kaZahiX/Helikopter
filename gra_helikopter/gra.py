@@ -55,7 +55,7 @@ while True:
     screen.fill((0 ,0 ,0))
     if copokazuje == "menu":
         napisz("Naciśnij spacje, aby zacząć", 20)
-        grafika = pygame.image.load(os.path.join("helikopter.png"))
+        grafika = pygame.image.load(os.path.join("logo.png"))
         screen.blit(grafika, (80, 30))
     elif copokazuje == "rozgrywka":
         for p in przeszkody:
