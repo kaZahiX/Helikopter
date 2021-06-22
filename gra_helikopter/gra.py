@@ -18,6 +18,25 @@ def napisz(tekst, rozmiar):
     screen.blit(rend, (x, y))
 
 
+class Helikopter:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.wysokosc = 30
+        self.szerokosc = 50
+        self.ksztalt = pygame.Rect(self.x, self.y, self.szerokosc, self.wysokosc)
+        self.grafika = pygame.image.load(os.path.join('helikopter.png'))
+
+    def rysuj(self):
+        screen.blit(self.grafika, (self.x, self.y))
+
+
+    def ruch(self, v):
+        self.y = self.y +v
+
+
+
+
 class Przeszkoda:
     def __init__(self, x, szerokosc):
         self.x = x
@@ -47,6 +66,10 @@ przeszkody = []
 for i in range(21):
     przeszkody.append(Przeszkoda(i * szer / 20, szer / 20))
 
+gracz = Helikopter(250, 275)
+
+dy = 0
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -65,4 +88,6 @@ while True:
             if p.x <= -p.szerokosc:
                 przeszkody.remove(p)
                 przeszkody.append((Przeszkoda(szer, szer/20)))
+        gracz.rysuj()
+        gracz.ruch(dy)
     pygame.display.update()
