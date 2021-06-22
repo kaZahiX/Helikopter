@@ -38,6 +38,7 @@ class Przeszkoda:
     def ruch(self, v):
         self.x = self.x - v
         self.ksztalt_gora = pygame.Rect(self.x, self.y_gora, self.szerokosc, self.wys_gora)
+        self.ksztalt_dol = pygame.Rect(self.x, self.y_dol, self.szerokosc, self.wys_dol)
 
 
 
@@ -51,11 +52,13 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             quit()
+    screen.fill((0 ,0 ,0))
     if copokazuje == "menu":
         napisz("Naciśnij spacje, aby zacząć", 20)
         grafika = pygame.image.load(os.path.join("helikopter.png"))
-        screen.blit(grafika, (20, 80))
+        screen.blit(grafika, (80, 30))
     elif copokazuje == "rozgrywka":
         for p in przeszkody:
+            p.ruch(1)
             p.rysuj()
     pygame.display.update()
