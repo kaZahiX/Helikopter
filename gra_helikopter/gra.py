@@ -61,4 +61,8 @@ while True:
         for p in przeszkody:
             p.ruch(1)
             p.rysuj()
+        for p in przeszkody:
+            if p.x <= -p.szerokosc:
+                przeszkody.remove(p)
+                przeszkody.append((Przeszkoda(szer, szer/20)))
     pygame.display.update()
