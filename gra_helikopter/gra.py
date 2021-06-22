@@ -75,6 +75,11 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             quit()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_UP:
+                dy = -1
+            if event.key == pygame.K_DOWN:
+                dy = 1
     screen.fill((0 ,0 ,0))
     if copokazuje == "menu":
         napisz("Naciśnij spacje, aby zacząć", 20)
