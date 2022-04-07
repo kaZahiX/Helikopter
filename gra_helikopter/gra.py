@@ -30,11 +30,8 @@ class Helikopter:
     def rysuj(self):
         screen.blit(self.grafika, (self.x, self.y))
 
-
     def ruch(self, v):
-        self.y = self.y +v
-
-
+        self.y = self.y + v
 
 
 class Przeszkoda:
@@ -52,7 +49,7 @@ class Przeszkoda:
 
     def rysuj(self):
         pygame.draw.rect(screen, self.kolor, self.ksztalt_gora, 0)
-        pygame.draw.rect(screen, self.kolor,  self.ksztalt_dol, 0)
+        pygame.draw.rect(screen, self.kolor, self.ksztalt_dol, 0)
 
     def ruch(self, v):
         self.x = self.x - v
@@ -80,7 +77,7 @@ while True:
                 dy = -1
             if event.key == pygame.K_DOWN:
                 dy = 1
-    screen.fill((0 ,0 ,0))
+    screen.fill((0, 0, 0))
     if copokazuje == "menu":
         napisz("Naciśnij spacje, aby zacząć", 20)
         grafika = pygame.image.load(os.path.join("logo.png"))
@@ -92,7 +89,7 @@ while True:
         for p in przeszkody:
             if p.x <= -p.szerokosc:
                 przeszkody.remove(p)
-                przeszkody.append((Przeszkoda(szer, szer/20)))
+                przeszkody.append((Przeszkoda(szer, szer / 20)))
         gracz.rysuj()
         gracz.ruch(dy)
     pygame.display.update()
