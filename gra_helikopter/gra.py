@@ -57,7 +57,6 @@ class Przeszkoda:
         self.ksztalt_dol = pygame.Rect(self.x, self.y_dol, self.szerokosc, self.wys_dol)
 
 
-
 copokazuje = "rozgrywka"
 przeszkody = []
 for i in range(21):
