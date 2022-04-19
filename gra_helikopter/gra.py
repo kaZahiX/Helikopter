@@ -66,6 +66,8 @@ gracz = Helikopter(250, 275)
 
 dy = 0
 
+#przyciski
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
