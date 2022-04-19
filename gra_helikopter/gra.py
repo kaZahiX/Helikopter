@@ -56,6 +56,12 @@ class Przeszkoda:
         self.ksztalt_gora = pygame.Rect(self.x, self.y_gora, self.szerokosc, self.wys_gora)
         self.ksztalt_dol = pygame.Rect(self.x, self.y_dol, self.szerokosc, self.wys_dol)
 
+    def kolizja(self, player):
+        if self.ksztalt_gora.colliderect(player) or self.ksztalt_dol.colliderect(player):
+            return True
+        else:
+            return False
+
 
 copokazuje = "rozgrywka"
 przeszkody = []
@@ -66,7 +72,7 @@ gracz = Helikopter(250, 275)
 
 dy = 0
 
-#przyciski
+# przyciski
 
 while True:
     for event in pygame.event.get():
@@ -87,6 +93,11 @@ while True:
         for p in przeszkody:
             p.ruch(1)
             p.rysuj()
+
+            # kolizja
+
+            if p.kolizja(gracz.ksztalt):
+                copokazuje = "koniec"
         for p in przeszkody:
             if p.x <= -p.szerokosc:
                 przeszkody.remove(p)
