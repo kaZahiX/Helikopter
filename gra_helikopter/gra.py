@@ -1,9 +1,8 @@
-from helikopter import Helikopter
-from constants import *
-from przeszkoda import Przeszkoda
-
-import pygame
 import os
+
+from constants import *
+from helikopter import Helikopter
+from przeszkoda import Przeszkoda
 
 pygame.init()
 
