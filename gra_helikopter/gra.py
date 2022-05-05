@@ -7,15 +7,13 @@ from przeszkoda import Przeszkoda
 pygame.init()
 
 
-def napisz(tekst, rozmiar):
+def napisz(tekst, x, y, rozmiar):
     cz = pygame.font.SysFont("Arial", rozmiar)
     rend = cz.render(tekst, True, (70, 228, 191))
-    x = (szer - rend.get_rect().width) / 2
-    y = (wys - rend.get_rect().height) / 2
     screen.blit(rend, (x, y))
 
 
-copokazuje = "rozgrywka"
+copokazuje = "menu"
 przeszkody = []
 for i in range(21):
     przeszkody.append(Przeszkoda(i * szer / 20, szer / 20))
@@ -36,9 +34,15 @@ while True:
                 dy = -1
             if event.key == pygame.K_DOWN:
                 dy = 1
+            if event.key == pygame.K_SPACE:
+                if copokazuje != "rozgrywka":
+                    gracz = Helikopter(250, 275)
+                    dy = 0
+                    copokazuje = "rozgrywka"
+
     screen.fill((0, 0, 0))
     if copokazuje == "menu":
-        napisz("Naciśnij spacje, aby zacząć", 20)
+        napisz("Naciśnij spacje, aby zacząć", 80, 50, 20)
         grafika = pygame.image.load(os.path.join("logo.png"))
         screen.blit(grafika, (80, 30))
     elif copokazuje == "rozgrywka":
