@@ -42,7 +42,7 @@ while True:
 
     screen.fill((0, 0, 0))
     if copokazuje == "menu":
-        napisz("Naciśnij spacje, aby zacząć", 80, 50, 20)
+        napisz("Naciśnij spacje, aby zacząć", 80, 150, 20)
         grafika = pygame.image.load(os.path.join("logo.png"))
         screen.blit(grafika, (80, 30))
     elif copokazuje == "rozgrywka":
@@ -60,4 +60,10 @@ while True:
                 przeszkody.append((Przeszkoda(szer, szer / 20)))
         gracz.rysuj()
         gracz.ruch(dy)
+
+    elif copokazuje == "koniec":
+        grafika = pygame.image.load(os.path.join('logo.png'))
+        screen.blit(grafika, (80, 30))
+        napisz("Słabiutki jestes, poćwicz" ,  50, 290, 20)
+
     pygame.display.update()
