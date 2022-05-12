@@ -18,3 +18,4 @@ class Helikopter:
 
     def ruch(self, v):
         self.y = self.y + v
+        self.ksztalt = pygame.Rect(self.x, self.y, self.szerokosc, self.wysokosc)

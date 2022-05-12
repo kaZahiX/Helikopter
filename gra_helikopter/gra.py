@@ -20,7 +20,7 @@ for i in range(21):
 
 gracz = Helikopter(250, 275)
 
-dy = 0
+dy = -0.1
 
 # przyciski
 
@@ -31,13 +31,13 @@ while True:
             quit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
-                dy = -1
+                dy = -0.1
             if event.key == pygame.K_DOWN:
-                dy = 1
+                dy = 0.1
             if event.key == pygame.K_SPACE:
                 if copokazuje != "rozgrywka":
                     gracz = Helikopter(250, 275)
-                    dy = 0
+                    # dy = 0
                     copokazuje = "rozgrywka"
 
     screen.fill((0, 0, 0))
