@@ -31,10 +31,10 @@ while True:
             quit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
-                dy = -0.1
+                dy = -predkosc
                 print("gora")
             if event.key == pygame.K_DOWN:
-                dy = 0.1
+                dy = predkosc
                 print("dol")
             if event.key == pygame.K_SPACE:
                 if copokazuje != "rozgrywka":

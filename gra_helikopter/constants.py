@@ -7,3 +7,7 @@ screen = pygame.display.set_mode((szer, wys))
 kolor_tla = (15, 47, 50)
 
 kolor_przeszkody = (70, 152, 137)
+
+
+predkosc = 0.1
+
