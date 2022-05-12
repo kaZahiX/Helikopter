@@ -13,7 +13,7 @@ class Przeszkoda:
         self.odstep = 200
         self.y_dol = self.wys_gora + self.odstep
         self.wys_dol = wys - self.y_dol
-        self.kolor = (160, 140, 190)
+        self.kolor = kolor_przeszkody
         self.ksztalt_gora = pygame.Rect(self.x, self.y_gora, self.szerokosc, self.wys_gora)
         self.ksztalt_dol = pygame.Rect(self.x, self.y_dol, self.szerokosc, self.wys_dol)
 

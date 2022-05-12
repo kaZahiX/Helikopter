@@ -32,15 +32,17 @@ while True:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
                 dy = -0.1
+                print("gora")
             if event.key == pygame.K_DOWN:
                 dy = 0.1
+                print("dol")
             if event.key == pygame.K_SPACE:
                 if copokazuje != "rozgrywka":
                     gracz = Helikopter(250, 275)
                     # dy = 0
                     copokazuje = "rozgrywka"
 
-    screen.fill((0, 0, 0))
+    screen.fill(kolor_tla)
     if copokazuje == "menu":
         napisz("Naciśnij spacje, aby zacząć", 80, 150, 20)
         grafika = pygame.image.load(os.path.join("logo.png"))
