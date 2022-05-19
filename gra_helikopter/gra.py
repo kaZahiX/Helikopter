@@ -9,7 +9,7 @@ pygame.init()
 
 def napisz(tekst, x, y, rozmiar):
     cz = pygame.font.SysFont("Arial", rozmiar)
-    rend = cz.render(tekst, True, (70, 228, 191))
+    rend = cz.render(tekst, True, napis_wartosci["kolor"])
     screen.blit(rend, (x, y))
 
 
@@ -44,9 +44,9 @@ while True:
 
     screen.fill(kolor_tla)
     if copokazuje == "menu":
-        napisz("Naciśnij spacje, aby zacząć", 80, 150, 20)
+        napisz("Naciśnij spacje, aby zacząć", napis_wartosci["szerekosc"], napis_wartosci["wysokosc"], napis_wartosci["rozmiar"])
         grafika = pygame.image.load(os.path.join("logo.png"))
-        screen.blit(grafika, (80, 30))
+        screen.blit(grafika, (800, 400))
     elif copokazuje == "rozgrywka":
         for p in przeszkody:
             p.ruch(1)
@@ -65,7 +65,7 @@ while True:
 
     elif copokazuje == "koniec":
         grafika = pygame.image.load(os.path.join('logo.png'))
-        screen.blit(grafika, (80, 30))
-        napisz("Słabiutki jestes, poćwicz" ,  50, 290, 20)
+        screen.blit(grafika, (800, 400))
+        napisz("Słabiutki jestes, poćwicz", napis_wartosci["szerekosc"], napis_wartosci["wysokosc"], napis_wartosci["rozmiar"])
 
     pygame.display.update()

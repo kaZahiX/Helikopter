@@ -9,8 +9,8 @@ class Przeszkoda:
         self.x = x
         self.szerokosc = szerokosc
         self.y_gora = 0
-        self.wys_gora = random.randint(150, 250)
-        self.odstep = 200
+        self.wys_gora = random.randint(150, 260)
+        self.odstep = 180
         self.y_dol = self.wys_gora + self.odstep
         self.wys_dol = wys - self.y_dol
         self.kolor = kolor_przeszkody
