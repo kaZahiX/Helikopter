@@ -1,4 +1,5 @@
 import os
+import math
 
 from constants import *
 from helikopter import Helikopter
@@ -41,6 +42,7 @@ while True:
                     gracz = Helikopter(250, 275)
                     # dy = 0
                     copokazuje = "rozgrywka"
+                    punkty = 0
 
     screen.fill(kolor_tla)
     if copokazuje == "menu":
@@ -60,12 +62,13 @@ while True:
             if p.x <= -p.szerokosc:
                 przeszkody.remove(p)
                 przeszkody.append((Przeszkoda(szer, szer / 20)))
+                punkty = punkty + math.fabs(dy*2.5)
         gracz.rysuj()
         gracz.ruch(dy)
-
+        napisz(str(punkty), 500, 500, 40)
     elif copokazuje == "koniec":
         grafika = pygame.image.load(os.path.join('logo.png'))
         screen.blit(grafika, (800, 400))
         napisz("Słabiutki jestes, poćwicz", napis_wartosci["szerekosc"], napis_wartosci["wysokosc"], napis_wartosci["rozmiar"])
-
+        napisz("zdobyłes " + str(punkty) + " punktów",  napis_wartosci["szerekosc"], napis_wartosci["wysokosc"] + 50, napis_wartosci["rozmiar"])
     pygame.display.update()
