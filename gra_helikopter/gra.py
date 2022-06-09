@@ -6,6 +6,8 @@ from helikopter import Helikopter
 from przeszkoda import Przeszkoda
 
 pygame.init()
+pygame.mixer.init()
+pygame.mixer.music.load("bum.mp3")
 
 
 def napisz(tekst, x, y, rozmiar):
@@ -34,9 +36,11 @@ while True:
             if event.key == pygame.K_UP:
                 dy = -predkosc
                 print("gora")
+                pygame.mixer.music.play()
             if event.key == pygame.K_DOWN:
                 dy = predkosc
                 print("dol")
+                pygame.mixer.music.play()
             if event.key == pygame.K_SPACE:
                 if copokazuje != "rozgrywka":
                     gracz = Helikopter(250, 275)
